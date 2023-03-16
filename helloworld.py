@@ -95,3 +95,13 @@ print(difCheck(1, 10, 2))'''
 
 print(repeat("hall23 o"))'''
 
+def stringReverse(str):
+    reverseString = ""
+    for i in range(len(str)-1, -1, -1):
+        if str[i].islower():
+            reverseString += str[i].upper()
+        else:
+            reverseString += str[i].lower()
+    return reverseString
+
+print(stringReverse("Hello World"))
