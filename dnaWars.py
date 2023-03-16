@@ -16,22 +16,26 @@ Codon_Dict = {'T' : {'T' : {'T' : "Phenylalanine", 'C' : "Phenylalanine", 'A' : 
                        'G' : {'T' : "Glycine", 'C' : "Glycine", 'A' : "Glycine", 'G' : "Glycine"}}}
 
 sequence = "CGATTGCGTATAAGCACCAA"
-codonLength = 3
-currentCodon = ""
-codonList = []
-for i in range(len(sequence)):
-    currentCodon += sequence[i]
-    if len(currentCodon) == codonLength or i == len(sequence)-1:
-        codonList.append(currentCodon)
-        currentCodon = ""
 
-dict = {}
-for i in codonList:
-    if len(i) == 3:
-        dict["{}".format(i)] = Codon_Dict[i[0]][i[1]][i[2]]
-    elif len(i) == 2:
-        dict["{}".format(i)] = Codon_Dict[i[0]][i[1]]
-    else:
-        dict["{}".format(i)] = Codon_Dict[i[0]]
+def codonSequenceReader(seq):
+    codonLength = 3
+    currentCodon = ""
+    codonList = []
+    for i in range(len(seq)):
+        currentCodon += seq[i]
+        if len(currentCodon) == codonLength or i == len(seq)-1:
+            codonList.append(currentCodon)
+            currentCodon = ""
+
+    dict = {}
+    for i in codonList:
+        if len(i) == 3:
+            dict["{}".format(i)] = Codon_Dict[i[0]][i[1]][i[2]]
+        elif len(i) == 2:
+            dict["{}".format(i)] = Codon_Dict[i[0]][i[1]]
+        else:
+            dict["{}".format(i)] = Codon_Dict[i[0]]
+
+    return dict
         
-print(dict)
+print(codonSequenceReader(sequence))
