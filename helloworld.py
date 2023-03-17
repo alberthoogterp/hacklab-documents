@@ -95,7 +95,7 @@ print(difCheck(1, 10, 2))'''
 
 print(repeat("hall23 o"))'''
 
-def stringReverse(str):
+'''def stringReverse(str):
     reverseString = ""
     for i in range(len(str)-1, -1, -1):
         if str[i].islower():
@@ -104,4 +104,41 @@ def stringReverse(str):
             reverseString += str[i].lower()
     return reverseString
 
-print(stringReverse("Hello World"))
+print(stringReverse("Hello World"))'''
+
+'''def findEvenNums(num):
+    evenNums = [i for i in range(1, num+1) if i % 2 == 0]
+    return evenNums
+
+print(findEvenNums(56))'''
+
+'''def countAll(string):
+    letterCount = 0
+    numberCount = 0
+    result = {}
+    for i in string:
+        if str(i).isdigit():
+            numberCount += 1
+        elif str(i).isalnum():
+            letterCount += 1
+
+    result["LETTERS"] = letterCount
+    result["DIGITS"] = numberCount
+    return result
+
+print(countAll("Ha12_-=+.,"))'''
+
+'''def charIndex(string, letter):
+    firstIndex = None
+    lastIndex = 0
+    for i in range(len(string)):
+        if string[i] == letter:
+            if firstIndex == None:
+                firstIndex = i
+            lastIndex = i
+    if firstIndex == None:
+        return f"\"{letter}\" does not exist in \"{string}\", so we return undefined."
+    else:
+        return f"The first \"{letter}\" has index {firstIndex}, the last \"{letter}\" has index {lastIndex}."
+
+print(charIndex("happy", "e"))'''
